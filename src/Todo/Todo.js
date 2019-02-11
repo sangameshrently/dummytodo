@@ -90,7 +90,6 @@ function mapStateToProps(state) {
 // Maps `dispatch` to `props`:
 function mapDispatchToProps(dispatch) {
     console.log(' in mapDispatchToProps ', dispatch);
-
     return { dispatch };
 }
 

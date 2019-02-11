@@ -13,21 +13,21 @@ class TaskComponent extends Component {
         return (
             <div>
                 <span onClick={() => {
-                    this.props.dispatch(markAsCompleteTodoAction(task.id));
+                this.props.markAsCompleteTodoAction(task.id);
                 }} className={task.completed === true ? "completed" : ""}>
                     {task.name}
                 </span>
                 <Button variant="danger" type="submit" onClick={() => {
-                    this.props.dispatch(deleteTodoAction(task.id));
+                    this.props.deleteTodoAction(task.id);
                 }}> X </Button>
             </div>
         );
     }
 }
 
-
-function mapDispatchToProps(dispatch) {
-    return { dispatch };
+const mapDispatchToProps = {
+    deleteTodoAction,
+    markAsCompleteTodoAction 
 }
 
 export const Task = connect(null, mapDispatchToProps)(TaskComponent)
